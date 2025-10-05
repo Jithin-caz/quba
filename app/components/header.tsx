@@ -10,7 +10,7 @@ const Header = () => {
             <div className="container mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
                     <a href="#" className="text-2xl font-bold text-gray-900">
-                        VersaTech<span className="text-blue-600">.</span>
+                        Verza Tech<span className="text-blue-600">.</span>
                     </a>
                     <nav className="hidden md:flex items-center space-x-8">
                         <a href="#about" className="text-gray-600 hover:text-blue-600 transition-colors">About Us</a>

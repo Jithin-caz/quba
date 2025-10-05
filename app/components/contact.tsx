@@ -24,9 +24,9 @@ const ContactSection = () => {
                             <p className="text-gray-600 mb-8">Have a project in mind or just want to learn more about our services? Fill out the form, and we&apos;ll get back to you as soon as possible.</p>
                             <form onSubmit={handleSubmit}>
                                 <div className="space-y-4">
-                                    <input type="text" placeholder="Your Name" className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required />
-                                    <input type="email" placeholder="Your Email" className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required />
-                                    <textarea placeholder="Your Message" rows={5} className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required></textarea>
+                                    <input type="text" placeholder="Your Name" className="w-full text-gray-500 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required />
+                                    <input type="email" placeholder="Your Email" className="w-full text-gray-500 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required />
+                                    <textarea placeholder="Your Message" rows={5} className="w-full text-gray-500 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required></textarea>
                                     <button type="submit" className="w-full bg-blue-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-blue-700 transition-all shadow-sm">Send Message</button>
                                 </div>
                             </form>
