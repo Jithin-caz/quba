@@ -5,7 +5,7 @@ export function FlipWordsDemo() {
   const words = ["web & app dev","OS installation","3D simulations","3D printing"];
 
   return (
-    <div className="h-dvh overflow-clip grid grid-rows-[1fr_auto] relative">
+    <div className="min-h-dvh overflow-clip grid grid-rows-[1fr_auto] relative p-2">
       <div
         className="grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 relative"
         style={{
