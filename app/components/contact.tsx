@@ -82,7 +82,7 @@ const ContactSection = () => {
                             <div className="space-y-4">
                                 <p className="flex items-center"><Mail className="h-5 w-5 mr-3" /> jithinreji185@gmail.com</p>
                                 <p className="flex items-center"><Phone className="h-5 w-5 mr-3" /> +91 9188810189</p>
-                                <p className="flex items-start"><MapPin className="h-5 w-5 mr-3 mt-1 flex-shrink-0" />Quba College Jn, Kothamangalam 686666</p>
+                                <p className="flex items-start"><MapPin className="h-5 w-5 mr-3 mt-1 flex-shrink-0" />Quba, College Jn, Kothamangalam 686666</p>
                             </div>
                         </div>
                     </div>
