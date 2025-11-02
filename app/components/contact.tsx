@@ -7,9 +7,33 @@ const ContactSection = () => {
     const [formMessage, setFormMessage] = useState({ type: '', text: '' });
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setFormMessage({ type: 'success', text: 'Thank you! Your message has been sent.' });
-        // In a real app, you would handle form submission to a backend here.
-        (e.target as HTMLFormElement).reset();
+        const form = e.target as HTMLFormElement;
+        const formData = new FormData(form);
+        
+        try {
+            const response = await fetch('/api/mail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    message: formData.get('message'),
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to send message');
+            }
+
+            setFormMessage({ type: 'success', text: 'Thank you! Your message has been sent.' });
+            form.reset();
+        } catch (error) {
+            console.log(error);
+            setFormMessage({ type: 'error', text: 'Failed to send message. Please try again. '});
+        }
+
         setTimeout(() => setFormMessage({ type: '', text: '' }), 5000);
     };
     return (
@@ -22,9 +46,28 @@ const ContactSection = () => {
                             <p className="text-gray-600 mb-8">Have a project in mind or just want to learn more about our services? Fill out the form, and we&apos;ll get back to you as soon as possible.</p>
                             <form onSubmit={handleSubmit}>
                                 <div className="space-y-4">
-                                    <input type="text" placeholder="Your Name" className="w-full text-gray-500 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required />
-                                    <input type="email" placeholder="Your Email" className="w-full text-gray-500 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required />
-                                    <textarea placeholder="Your Message" rows={5} className="w-full text-gray-500 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required></textarea>
+                                   
+<input 
+    type="text" 
+    name="name"
+    placeholder="Your Name" 
+    className="w-full text-gray-500 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" 
+    required 
+/>
+<input 
+    type="email" 
+    name="email"
+    placeholder="Your Email" 
+    className="w-full text-gray-500 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" 
+    required 
+/>
+<textarea 
+    name="message"
+    placeholder="Your Message" 
+    rows={5} 
+    className="w-full text-gray-500 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" 
+    required
+></textarea>
                                     <button type="submit" className="w-full bg-blue-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-blue-700 transition-all shadow-sm">Send Message</button>
                                 </div>
                             </form>
