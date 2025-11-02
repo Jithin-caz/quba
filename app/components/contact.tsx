@@ -5,7 +5,6 @@ import FadeInSection from './fadeIn';
 
 const ContactSection = () => {
     const [formMessage, setFormMessage] = useState({ type: '', text: '' });
-
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setFormMessage({ type: 'success', text: 'Thank you! Your message has been sent.' });
@@ -13,7 +12,6 @@ const ContactSection = () => {
         (e.target as HTMLFormElement).reset();
         setTimeout(() => setFormMessage({ type: '', text: '' }), 5000);
     };
-    
     return (
         <section id="contact" className="py-20 bg-gray-50">
             <FadeInSection>
@@ -39,9 +37,9 @@ const ContactSection = () => {
                         <div className="bg-blue-600 text-white p-8 md:p-12 flex flex-col justify-center">
                             <h3 className="font-bold text-xl mb-4">Contact Information</h3>
                             <div className="space-y-4">
-                                <p className="flex items-center"><Mail className="h-5 w-5 mr-3" /> contact@versatech.com</p>
-                                <p className="flex items-center"><Phone className="h-5 w-5 mr-3" /> +1 (555) 123-4567</p>
-                                <p className="flex items-start"><MapPin className="h-5 w-5 mr-3 mt-1 flex-shrink-0" /> 123 Innovation Drive, Tech City, 54321</p>
+                                <p className="flex items-center"><Mail className="h-5 w-5 mr-3" /> jithinreji185@gmail.com</p>
+                                <p className="flex items-center"><Phone className="h-5 w-5 mr-3" /> +91 9188810189</p>
+                                <p className="flex items-start"><MapPin className="h-5 w-5 mr-3 mt-1 flex-shrink-0" />Qubac College Jn, Kothamangalam 686666</p>
                             </div>
                         </div>
                     </div>
